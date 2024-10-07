@@ -92,8 +92,8 @@ def main():
                         image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
                     # Recognize gesture
-                    gesture = recognize_palm(hand_landmarks)
-                    # gesture = recognize_ok(hand_landmarks)
+                    # gesture = recognize_palm(hand_landmarks)
+                    gesture = recognize_ok(hand_landmarks)
                     
                     # Display gesture near hand location
                     cv2.putText(image, gesture, 
