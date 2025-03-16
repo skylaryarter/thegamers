@@ -29,7 +29,7 @@ def recognize_thumb_left(hand_landmarks):
 
     # Check if thumb and index are close and other fingers are open
     if distance_y:
-        if (other_dist > 0.1):
+        if (other_dist > 0.1 and thumb_tip.x < index_tip.x):
             return "Left Thumb Gesture"
     return "Unknown"
 
