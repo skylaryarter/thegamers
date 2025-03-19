@@ -120,6 +120,10 @@ def main():
 
                 if recognized_gesture == "Open_Palm":
                     webbrowser.open('https://www.quaxio.com/2048/', new=2)
+                    #pyautogui.scroll(-50, x=100, y=200)
+                    #time.sleep(1)
+                    pyautogui.click(x=1092, y=518)
+                    pyautogui.scroll(-5)
                     # Make sure to allow for time between recognized gestures so only one window is opened
                     time.sleep(5)
 
@@ -142,13 +146,17 @@ def main():
                 elif recognized_gesture == "Closed_Fist":
                     pyautogui.press("z")
                     time.sleep(1)
+                elif recognized_gesture == "Pointing_Up":
+                    #pyautogui.click(x=1092, y=518)
+                    pyautogui.scroll(-5)
+                    time.sleep(5)
 
                 # Display recognized gesture and confidence 
                 cv2.putText(image, f"Gesture: {recognized_gesture} ({confidence:.2f})", 
                             (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
 
             # Display the resulting image (can comment this out for better performance later on)
-            # cv2.imshow('Gesture Recognition', image)
+            #cv2.imshow('Gesture Recognition', image)
 
             if cv2.waitKey(5) & 0xFF == 27:
                 break
